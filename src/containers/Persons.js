@@ -32,7 +32,7 @@ const mapStateToProps = state => {
 // this you access to dispatch functions and being able to dispatch. recives the dispatch function as an input and returns an object where we map props to dispatch function executions.
 const mapDispatchToProps = dispatch => {
   return {
-    onAddedPerson: () => dispatch({type: actionTypes.ADD_PERSON}),
+    onAddedPerson: (name, age) => dispatch({type: actionTypes.ADD_PERSON, payload: {name: name, age: age}}),
     onRemovePerson: (id) => dispatch({type: actionTypes.REMOVE_PERSON, personId: id})
   };
 };
